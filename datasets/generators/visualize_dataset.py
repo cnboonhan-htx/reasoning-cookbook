@@ -47,7 +47,7 @@ def main():
 
     spotlight.show(
         df,
-        dtype={"image": Image},
+        dtype={"image": Image, "prompt": str, "completion": str},
         host=args.host,
         port=args.port,
         wait=True,
