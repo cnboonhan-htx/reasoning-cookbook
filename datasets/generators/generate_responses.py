@@ -6,8 +6,8 @@ to a teacher VLM via OpenAI-compatible API, and outputs a LLaVA-style SFT datase
 
 Usage:
     python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json
-    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:8000/v1
-    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:8000/v1 --model-id claude-haiku-4
+    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:8317/v1
+    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:8317/v1 --model-id claude-haiku-4
 
 Environment variables:
     OPENAI_API_KEY      - API key for the VLM endpoint
@@ -19,6 +19,7 @@ Dependencies:
 """
 
 import argparse
+import base64
 import json
 import logging
 import os
@@ -29,7 +30,7 @@ from openai import OpenAI
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL_ID = os.environ.get("VLM_MODEL_ID", "claude-haiku-4")
+DEFAULT_MODEL_ID = os.environ.get("VLM_MODEL_ID", "claude-haiku-4-5-20251001")
 
 SYSTEM_PROMPT = """\
 You are a visual reasoning assistant. When given an image and a question, \
@@ -49,14 +50,26 @@ QUESTION_TEMPLATES = [
 
 
 
+def encode_image_base64(image_path: str) -> str:
+    with open(image_path, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
+
+
 def query_vlm(client: OpenAI, model: str, image_path: str, question: str) -> str:
+    image_b64 = encode_image_base64(image_path)
+    ext = Path(image_path).suffix.lstrip(".").lower()
+    mime = {"png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg"}.get(ext, "image/png")
+
     response = client.chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {
                 "role": "user",
-                "content": question,
+                "content": [
+                    {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{image_b64}"}},
+                    {"type": "text", "text": question},
+                ],
             },
         ],
     )
@@ -83,7 +96,10 @@ def main():
     parser.add_argument("--questions-file", default=None, help="JSON file with custom questions (list of strings). If not provided, uses built-in templates.")
     args = parser.parse_args()
 
-    client_kwargs = {"api_key": os.environ.get("OPENAI_API_KEY", "none")}
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        parser.error("OPENAI_API_KEY environment variable is required")
+    client_kwargs = {"api_key": api_key}
     if args.base_url:
         client_kwargs["base_url"] = args.base_url
     client = OpenAI(**client_kwargs)

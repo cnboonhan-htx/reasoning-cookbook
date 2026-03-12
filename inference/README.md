@@ -6,5 +6,9 @@ Download and load `nvidia/Cosmos-Reason2-8B` via HuggingFace Transformers / vLLM
 
 For using Claude as a teacher VLM via an OpenAI-compatible API, see [cliproxyapi](https://help.router-for.me/introduction/quick-start.html).
 
-```bash
+```
+curl -fsSL https://raw.githubusercontent.com/brokechubb/cliproxyapi-installer/refs/heads/master/cliproxyapi-installer | bash
+systemctl --user enable cliproxyapi.service
+systemctl --user start cliproxyapi.service
+curl -H "Authorization: Bearer $OPENAI_API_KEY" http://127.0.0.1:8317/v1/models 
 ```
