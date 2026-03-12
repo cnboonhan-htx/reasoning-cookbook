@@ -10,5 +10,5 @@ Current thoughts on the design and pipeline.
 4. Come up with some SOP for use cases. Get a sense of the appropriate "datasets" required, and the post-processing required to align with datasets in 3.
 5. Establish automation pipeline for training 3. through P1A and other clusters.
 6. Establish automation pipeline for evaluation output from 5.
-7. Deploy the necessary infrastructure to enable experiment tracking.
+7. Deploy the necessary infrastructure to enable experiment tracking. (WanDB)
 8. As needed, modify the `Simworld` to add assets objects to carry out SOP.

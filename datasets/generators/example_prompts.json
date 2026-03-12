@@ -1,0 +1,12 @@
+[
+  {"id": "warehouse_001", "prompt": "A photorealistic warehouse interior with metal shelving units stacked with cardboard boxes, a yellow forklift parked in the aisle, and overhead fluorescent lighting"},
+  {"id": "warehouse_002", "prompt": "A photorealistic warehouse scene with a worker in a high-visibility vest operating a pallet jack near loading dock doors"},
+  {"id": "construction_001", "prompt": "A photorealistic outdoor construction site with orange safety cones, a cement mixer, steel beams, and workers wearing hard hats"},
+  {"id": "construction_002", "prompt": "A photorealistic construction zone with a large excavator digging a trench, dirt piles, and caution tape surrounding the area"},
+  {"id": "road_001", "prompt": "A photorealistic urban street intersection with traffic lights, pedestrian crosswalks, parked cars, and a cyclist approaching"},
+  {"id": "road_002", "prompt": "A photorealistic highway scene from a dashcam perspective showing multiple lanes, a truck merging, and road signs overhead"},
+  {"id": "factory_001", "prompt": "A photorealistic factory floor with robotic arms assembling components on a conveyor belt, sparks flying from a welding station"},
+  {"id": "factory_002", "prompt": "A photorealistic clean room in a semiconductor factory with workers in white bunny suits inspecting silicon wafers"},
+  {"id": "outdoor_001", "prompt": "A photorealistic park pathway with benches, trees, a person walking a dog, and a bicycle leaning against a fence"},
+  {"id": "outdoor_002", "prompt": "A photorealistic parking lot with various vehicles, shopping carts, speed bumps, and directional arrows painted on the ground"}
+]
