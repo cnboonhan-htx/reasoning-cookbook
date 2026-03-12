@@ -40,11 +40,6 @@ RUN pip install --no-cache-dir \
     Pillow \
     qwen-vl-utils
 
-# Pre-download model weights into the image
-RUN python -c "from transformers import Qwen3VLForConditionalGeneration, AutoProcessor; \
-    Qwen3VLForConditionalGeneration.from_pretrained('nvidia/Cosmos-Reason2-2B'); \
-    AutoProcessor.from_pretrained('nvidia/Cosmos-Reason2-2B')"
-
 WORKDIR /workspace
 COPY train_sft.py /workspace/train_sft.py
 
