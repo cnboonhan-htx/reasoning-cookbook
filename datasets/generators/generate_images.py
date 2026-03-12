@@ -17,8 +17,10 @@ import logging
 import os
 from pathlib import Path
 
+import numpy as np
 import torch
 from diffusers import AutoencoderKLWan, WanPipeline
+from PIL import Image
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
@@ -60,7 +62,13 @@ def generate_image(
         guidance_scale=guidance_scale,
         num_inference_steps=num_inference_steps,
     )
-    return output.frames[0][0]
+    frame = output.frames[0][0]
+    if isinstance(frame, Image.Image):
+        return frame
+    frame = np.squeeze(frame)
+    if frame.dtype != np.uint8:
+        frame = (np.clip(frame, 0, 1) * 255).astype(np.uint8)
+    return Image.fromarray(frame)
 
 
 def load_prompts(prompts_file: str) -> list[dict]:
