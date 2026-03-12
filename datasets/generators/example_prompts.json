@@ -1,12 +1,12 @@
 [
-  {"id": "warehouse_001", "prompt": "A photorealistic warehouse interior with metal shelving units stacked with cardboard boxes, a yellow forklift parked in the aisle, and overhead fluorescent lighting"},
-  {"id": "warehouse_002", "prompt": "A photorealistic warehouse scene with a worker in a high-visibility vest operating a pallet jack near loading dock doors"},
-  {"id": "construction_001", "prompt": "A photorealistic outdoor construction site with orange safety cones, a cement mixer, steel beams, and workers wearing hard hats"},
-  {"id": "construction_002", "prompt": "A photorealistic construction zone with a large excavator digging a trench, dirt piles, and caution tape surrounding the area"},
-  {"id": "road_001", "prompt": "A photorealistic urban street intersection with traffic lights, pedestrian crosswalks, parked cars, and a cyclist approaching"},
-  {"id": "road_002", "prompt": "A photorealistic highway scene from a dashcam perspective showing multiple lanes, a truck merging, and road signs overhead"},
-  {"id": "factory_001", "prompt": "A photorealistic factory floor with robotic arms assembling components on a conveyor belt, sparks flying from a welding station"},
-  {"id": "factory_002", "prompt": "A photorealistic clean room in a semiconductor factory with workers in white bunny suits inspecting silicon wafers"},
-  {"id": "outdoor_001", "prompt": "A photorealistic park pathway with benches, trees, a person walking a dog, and a bicycle leaning against a fence"},
-  {"id": "outdoor_002", "prompt": "A photorealistic parking lot with various vehicles, shopping carts, speed bumps, and directional arrows painted on the ground"}
+  {"id": "hazmat_lab_001", "prompt": "A photorealistic chemistry laboratory interior with glass beakers containing brightly colored liquids, chemical spill on the floor near a fume hood, yellow hazard warning signs, and shelves of labeled reagent bottles"},
+  {"id": "hazmat_warehouse_002", "prompt": "A photorealistic industrial warehouse storing stacked drums of flammable solvents with red diamond-shaped GHS labels, a leaking barrel pooling liquid on concrete, and safety shower station on the wall"},
+  {"id": "hazmat_factory_003", "prompt": "A photorealistic paint manufacturing facility interior with open vats of pigment, aerosol cans on a conveyor belt, ventilation ducts overhead, and flammable material placards on the walls"},
+  {"id": "hazmat_hospital_004", "prompt": "A photorealistic hospital storage room with biohazard waste bins, sharps containers on shelves, chemical disinfectant jugs, and radioactive material trefoil signs on a locked cabinet"},
+  {"id": "hazmat_garage_005", "prompt": "A photorealistic auto repair garage interior with open containers of motor oil and antifreeze, a battery acid spill near a workbench, oxyacetylene welding tanks chained to the wall, and a parts-cleaning solvent tank"},
+  {"id": "hazmat_cleanroom_006", "prompt": "A photorealistic semiconductor cleanroom with hydrofluoric acid etch baths, nitrogen gas cylinders along the wall, corrosive chemical warning signs, and technicians in full protective suits"},
+  {"id": "hazmat_kitchen_007", "prompt": "A photorealistic industrial kitchen interior with pressurized gas lines feeding commercial stoves, large containers of industrial degreasers under a sink, and a propane tank visible near the back entrance"},
+  {"id": "hazmat_janitor_008", "prompt": "A photorealistic building maintenance closet with shelves of bleach, ammonia, and concentrated cleaning agents, a mop bucket with mixed chemicals, and MSDS sheets posted on the door"},
+  {"id": "hazmat_pharma_009", "prompt": "A photorealistic pharmaceutical compounding room with powdered drug precursors in open trays, a ventilated weighing enclosure, cytotoxic waste bags, and spill-containment pallets on the floor"},
+  {"id": "hazmat_printshop_010", "prompt": "A photorealistic printing press facility interior with drums of solvent-based ink, isopropyl alcohol wash stations, ink-stained rags near a waste bin, and a flammable liquids storage cabinet with self-closing doors"}
 ]

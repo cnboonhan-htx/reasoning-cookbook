@@ -19,7 +19,7 @@ RUN ln -sf /usr/bin/python3.10 /usr/bin/python
 
 RUN pip install --no-cache-dir \
     git+https://github.com/huggingface/diffusers \
-    transformers accelerate torch ftfy huggingface_hub openai
+    transformers accelerate torch ftfy huggingface_hub openai datasets Pillow renumics-spotlight
 
 WORKDIR /workspace
 COPY . /workspace/datasets
