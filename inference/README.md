@@ -4,12 +4,7 @@ Download and load `nvidia/Cosmos-Reason2-8B` via HuggingFace Transformers / vLLM
 
 ## Claude OpenAI-Compatible Endpoint
 
-For using Claude as a teacher VLM via an OpenAI-compatible API, see [claude-max-api-proxy](https://docs.openclaw.ai/providers/claude-max-api-proxy).
+For using Claude as a teacher VLM via an OpenAI-compatible API, see [cliproxyapi](https://help.router-for.me/introduction/quick-start.html).
 
 ```bash
-# Requires Node.js 20+ and Claude Code CLI
-npm install -g claude-max-api-proxy
-
-# Verify Claude CLI is authenticated
-claude --version
 ```

@@ -6,8 +6,8 @@ to a teacher VLM via OpenAI-compatible API, and outputs a LLaVA-style SFT datase
 
 Usage:
     python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json
-    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:3456/v1
-    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:3456/v1 --model-id claude-haiku-4
+    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:8000/v1
+    python generate_responses.py --manifest-file ./raw/images/manifest.json --output-file ./raw/sft_dataset.json --base-url http://127.0.0.1:8000/v1 --model-id claude-haiku-4
 
 Environment variables:
     OPENAI_API_KEY      - API key for the VLM endpoint
