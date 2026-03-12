@@ -20,4 +20,5 @@ pip install -e .
 wget https://huggingface.co/datasets/SimWorld-AI/SimWorld/resolve/main/Base/Linux.zip
 unzip Linux.zip
 ./Linux/SimWorld.sh /Game/Maps/demo_1.umap
+python simworld_iteration_1.pssssss
 ```
